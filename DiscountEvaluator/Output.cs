@@ -1,13 +1,13 @@
-﻿using DiscountEvaluator.Models;
+﻿using DiscountEvaluator.Interfaces;
 using System;
 
 namespace DiscountEvaluator
 {
     public static class Output
     {
-        public static void ShipmentOutput(Shipment shipment)
+        public static void ShipmentOutput(IShipment shipment)
         {
-            Console.WriteLine(shipment + "\n");
+            Console.WriteLine(shipment);
         }
 
         public static void EndProgram()

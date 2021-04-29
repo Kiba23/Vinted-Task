@@ -4,6 +4,6 @@ namespace DiscountEvaluator.Rules.Rules_Interfaces
 {
     interface IDiscountExceed
     {
-        void CheckDiscount(IShipment shipment, decimal maxDiscount);
+        void ApplyDiscount(IShipment shipment, decimal initialShipmentPrice);
     }
 }

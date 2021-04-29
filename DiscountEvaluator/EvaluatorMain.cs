@@ -29,7 +29,9 @@ namespace DiscountEvaluator
                 {
                     while (!String.IsNullOrWhiteSpace(line = sr.ReadLine()))
                     {
-                        _handlerStart.Start(line);
+                        var shipment = _handlerStart.Start(line);
+
+                        Output.ShipmentOutput(shipment);
                     }
                 }
             }

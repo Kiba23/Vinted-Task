@@ -7,24 +7,34 @@ namespace DiscountEvaluator.Handlers
     {
         private readonly IShipmentHandler _shipmentHandler;
         private readonly IRulesHandler _rulesHandler;
+        private readonly IDiscountHandler _discountHandler;
 
         public HandlersStart()
         {
             _shipmentHandler = new ShipmentHandler();
             _rulesHandler = new RulesHandler();
+            _discountHandler = new DiscountHandler();
         }
 
         public HandlersStart(decimal maxDiscount)
         {
             _shipmentHandler = new ShipmentHandler();
-            _rulesHandler = new RulesHandler(maxDiscount);
+            _rulesHandler = new RulesHandler();
+            _discountHandler = new DiscountHandler(maxDiscount);
         }
 
-        public void Start(string shipmentStr)
+        public IShipment Start(string shipmentStr)
         {
             var shipment = _shipmentHandler.CreateShipment(shipmentStr) ?? throw new ArgumentNullException
-                ("Shipment is null");
+                ("Shipment is null.");
+
+            var initialShipmentPrice = shipment.Price ?? throw new ArgumentNullException("Price is null.");
+
             _rulesHandler.ApplyRules(shipment);
+
+            _discountHandler.StartDiscountFunctions(shipment, initialShipmentPrice);
+
+            return shipment;
         }
     }
 }

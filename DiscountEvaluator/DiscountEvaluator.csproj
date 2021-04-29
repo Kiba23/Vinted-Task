@@ -44,10 +44,12 @@
     <Compile Include="Enums\Companies.cs" />
     <Compile Include="Enums\Sizes.cs" />
     <Compile Include="EvaluatorMain.cs" />
+    <Compile Include="Handlers\DiscountHandler.cs" />
     <Compile Include="Handlers\HandlersStart.cs" />
     <Compile Include="Handlers\RulesHandler.cs" />
     <Compile Include="Handlers\ShipmentHandler.cs" />
     <Compile Include="Helpers\TryParser.cs" />
+    <Compile Include="Interfaces\IDiscountHandler.cs" />
     <Compile Include="Interfaces\IHandlerStartable.cs" />
     <Compile Include="Interfaces\IRulesHandler.cs" />
     <Compile Include="Interfaces\IShipment.cs" />

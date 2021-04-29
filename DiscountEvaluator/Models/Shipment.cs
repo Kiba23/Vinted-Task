@@ -22,8 +22,8 @@ namespace DiscountEvaluator.Models
 
         public override string ToString()
         {
-            return $"{Date.ToShortDateString()} {Size} {Company} {string.Format("{0:.00}", Price)} " +
-                $"{(Discount == 0 || Discount == null ? "-" : $"{string.Format("{0:.00}", Discount)}")}";
+            return $"{Date.ToShortDateString()} {Size} {Company} {string.Format("{0:0.00}", Price)} " +
+                $"{(Discount == 0 || Discount == null ? "-" : $"{string.Format("{0:0.00}", Discount)}")}";
         }
     }
 }
