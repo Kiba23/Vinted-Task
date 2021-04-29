@@ -25,8 +25,10 @@ namespace DiscountEvaluator.Handlers
 
         public IShipment Start(string shipmentStr)
         {
-            var shipment = _shipmentHandler.CreateShipment(shipmentStr) ?? throw new ArgumentNullException
-                ("Shipment is null.");
+            var shipment = _shipmentHandler.CreateShipment(shipmentStr);
+
+            if (shipment == null)
+                return null;
 
             var initialShipmentPrice = shipment.Price ?? throw new ArgumentNullException("Price is null.");
 

@@ -5,7 +5,7 @@ using System;
 
 namespace DiscountEvaluator.Handlers
 {
-    class ShipmentHandler : IShipmentHandler
+    public class ShipmentHandler : IShipmentHandler
     {
         public IShipment CreateShipment(string shipmentStr)
         {
@@ -13,13 +13,20 @@ namespace DiscountEvaluator.Handlers
 
             if (shipmentData.Length > 0 && shipmentData.Length < 4) 
             {
-                return new Shipment(
-                    DateTime.Parse(shipmentData[0]),
-                    TryParser.SizeTryParse(shipmentData[1]),
-                    TryParser.CompanyTryParse(shipmentData[2])
-                    );
+                try
+                {
+                    return new Shipment(
+                        TryParser.DateTimeTryParse(shipmentData[0]),
+                        TryParser.SizeTryParse(shipmentData[1]),
+                        TryParser.CompanyTryParse(shipmentData[2])
+                        );
+                }
+                catch (InvalidCastException)
+                {
+                    Output.IgnoredOutput(shipmentStr);
+                }
             }
-            throw new Exception("Shipment was incorrect");
+            return null;
         }
     }
 }

@@ -29,16 +29,17 @@ namespace DiscountEvaluator.Rules
             DiscountApplied += shipment.Discount ?? throw new ArgumentNullException("Discount was null.");
 
             // Check if discount exceeded the maximum disount price
-            if (DiscountApplied + necessaryDiscount >= _maxDiscount && shipment.Date.Month != MonthExceeded)
+            if (DiscountApplied >= _maxDiscount && shipment.Date.Month != MonthExceeded)
             {
                 CoverDiscountPartially(shipment, initialShipmentPrice);
+                DiscountApplied = 0;
                 MonthExceeded = shipment.Date.Month;
             }
         }
 
         private void CoverDiscountPartially(IShipment shipment, decimal initialShipmentPrice)
         {
-            var difference = _maxDiscount - DiscountApplied;
+            var difference = _maxDiscount - (DiscountApplied - shipment.Discount);
 
             shipment.Price = initialShipmentPrice - difference;
             shipment.Discount = difference;

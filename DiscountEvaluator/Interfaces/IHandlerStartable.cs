@@ -1,7 +1,7 @@
 ﻿
 namespace DiscountEvaluator.Interfaces
 {
-    interface IHandlerStartable
+    public interface IHandlerStartable
     {
         IShipment Start(string shipment);
     }

@@ -2,7 +2,7 @@
 
 namespace DiscountEvaluator.Interfaces
 {
-    interface IShipmentHandler
+    public interface IShipmentHandler
     {
         IShipment CreateShipment(string shipment);
     }

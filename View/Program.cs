@@ -6,7 +6,7 @@ namespace View
     {
         static void Main(string[] args)
         {
-            EvaluatorMain evaluatorMain = new EvaluatorMain(15M);
+            EvaluatorMain evaluatorMain = new EvaluatorMain();
 
             evaluatorMain.RunEvaluator();
 
