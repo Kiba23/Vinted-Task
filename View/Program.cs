@@ -14,7 +14,7 @@ namespace View
 
             EvaluatorMain evaluatorMain = new EvaluatorMain();
 
-            evaluatorMain.RunEvaluator();
+            evaluatorMain.RunEvaluator(); // Beginning of the program
 
             Output.EndProgram();
         }

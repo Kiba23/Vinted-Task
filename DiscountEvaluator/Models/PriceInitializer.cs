@@ -4,6 +4,7 @@ namespace DiscountEvaluator.Models
 {
     static class PriceInitializer // It is static because we don't need to have objects of this class
     {
+        // Simulating the table of prices
         public static readonly List<Pricing> Prices = new List<Pricing>
         {
             new Pricing(Companies.LP, Sizes.S, 1.50M),

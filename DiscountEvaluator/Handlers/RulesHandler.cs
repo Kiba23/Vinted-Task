@@ -20,6 +20,8 @@ namespace DiscountEvaluator.Handlers
             _lowestPackagePrice.ApplyLowestPriceRule(shipment);
 
             _thirdFreeShipment.ApplyThirdRule(shipment);
+
+            // Discount rule has a different class
         }
     }
 }

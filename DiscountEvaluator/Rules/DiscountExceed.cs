@@ -22,7 +22,7 @@ namespace DiscountEvaluator.Rules
             var necessaryDiscount = initialShipmentPrice - shipment.Price // Calculating the difference
                 ?? throw new ArgumentNullException("Price was null.");
 
-            if (necessaryDiscount == 0M)
+            if (necessaryDiscount == 0M) // Not applying the discount in case discount needed was zero
                 return;
 
             shipment.Discount = necessaryDiscount;

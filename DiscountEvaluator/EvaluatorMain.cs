@@ -7,6 +7,8 @@ namespace DiscountEvaluator
 {
     public class EvaluatorMain
     {
+        private const string INPUT_FILE = "input.txt";
+
         private readonly IHandlerStartable _handlerStart;
 
         public EvaluatorMain()
@@ -25,13 +27,13 @@ namespace DiscountEvaluator
             {
                 string line;
 
-                using (var sr = new StreamReader("input.txt"))
+                using (var sr = new StreamReader(INPUT_FILE))
                 {
                     while (!String.IsNullOrWhiteSpace(line = sr.ReadLine()))
                     {
-                        var shipment = _handlerStart.Start(line);
+                        var shipment = _handlerStart.Start(line); // Processing each line
 
-                        Output.ShipmentOutput(shipment);
+                        Output.ShipmentOutput(shipment); // Outputing the shipment object
                     }
                 }
             }

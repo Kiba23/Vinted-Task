@@ -27,6 +27,7 @@ namespace DiscountEvaluator.Handlers
         {
             var shipment = _shipmentHandler.CreateShipment(shipmentStr);
 
+            // Case where invalid input was provided, this will stop the program and will be outputed - Ignored
             if (shipment == null)
                 return null;
 
