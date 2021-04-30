@@ -1,5 +1,4 @@
-﻿using DiscountEvaluator.Models;
-
+﻿
 namespace DiscountEvaluator.Interfaces
 {
     public interface IShipmentHandler

@@ -1,5 +1,4 @@
-﻿using DiscountEvaluator.Rules.Rules_Interfaces;
-
+﻿
 namespace DiscountEvaluator.Interfaces
 {
     interface IRulesHandler

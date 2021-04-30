@@ -1,7 +1,7 @@
 ﻿
 namespace DiscountEvaluator.Interfaces
 {
-    interface IDiscountHandler
+    public interface IDiscountHandler
     {
         void StartDiscountFunctions(IShipment shipment, decimal initialShipmentPrice);
     }

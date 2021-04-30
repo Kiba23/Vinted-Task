@@ -4,7 +4,7 @@ using DiscountEvaluator.Rules.Rules_Interfaces;
 
 namespace DiscountEvaluator.Handlers
 {
-    class DiscountHandler : IDiscountHandler
+    public class DiscountHandler : IDiscountHandler
     {
         private readonly IDiscountExceed _discountExceed;
 
