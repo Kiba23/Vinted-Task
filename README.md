@@ -2,4 +2,10 @@
 
 Title - Discount Evaluator.
 
-Comments: assuming that "input.txt" file is sorted by date.
+## To start and test solution:    
+  - git clone
+  - cd Vindted-Task
+  - to run project: `dotnet run --project DiscountCalculator/DiscountCalculator.csproj`  
+  - to run tests: `dotnet test DiscountCalculator.Tests/DiscountCalculator.Tests.csproj` 
+  
+#### Input file `input.txt` should be ordered by date
