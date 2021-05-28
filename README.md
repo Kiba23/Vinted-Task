@@ -1,3 +1,5 @@
 # Vinted Backend Task
 
-Discount Evaluator
+Title - Discount Evaluator.
+
+Comments: assuming that "input.txt" file is sorted by date.
